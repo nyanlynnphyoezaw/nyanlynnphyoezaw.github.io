@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 from streamlit_star_rating import st_star_rating
 import re
 
@@ -41,7 +42,16 @@ if page == 'Home':
     expense_dict = {'Rent': rent_amount, 'Bills': bill_amount, 'Car': car_amount,
                     'Grocery': grocery_amount, 'Dining Out': dining_out_amount,
                     'Entertainment': entertainment_amount, 'Other': other_amount}
-
+    #piechart
+    expense_breakdown = st.button('Check your expense breakdown')
+    if expense_breakdown:
+        st.subheader('Expense Breakdown')
+        labels = expense_dict.keys()
+        sizes = expense_dict.values()
+        fig1, ax1 = plt.subplots()
+        ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+        ax1.axis('equal')
+        st.pyplot(fig1)
 
     #balance
     balance_type = st.radio('Check your balance', ['Monthly', 'Yearly'])
