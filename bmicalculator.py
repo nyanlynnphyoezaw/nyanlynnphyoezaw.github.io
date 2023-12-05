@@ -39,23 +39,3 @@ if (st.button('Calculate')):
         st.text("Obesity class 1")
     elif bmi < 39.9:
         st.text("Obesity Class 2")
-
-
-
-import streamlit as st
-# success
-st.success("Success")
-
-# success
-st.info("Information")
-
-# success
-st.warning("Warning")
-
-# success
-st.error("Error")
-
-# Exception - This has been added later
-exp = ZeroDivisionError("Trying to divide by Zero")
-st.exception(exp)
-
