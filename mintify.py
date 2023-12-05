@@ -107,7 +107,7 @@ elif page == 'Invest':
             st.subheader("Compound Interest Growth Over Time")
             periods = list(range(len(balances)))
             df = pd.DataFrame({'Period(Years)': periods, 'Balance': balances})
-            st.dataframe(df, hide_index=True)
+            st.dataframe(df.set_index(df.columns[0]))
             st.line_chart(df.set_index('Period(Years)'))
 
 elif page == 'Tips':
