@@ -1,4 +1,3 @@
 streamlit
 pandas
-st_star_rating
 re
