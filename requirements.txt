@@ -1,5 +1,4 @@
 streamlit
 pandas
-matplotlib.pyplot
 st_star_rating
 re
